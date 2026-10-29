@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neesuntech – IT Services Company | Web, Mobile, Cloud &amp; Custom Software</title>
+    <meta name="description"
+        content="Neesuntech delivers web development, mobile apps, custom software, cloud and IT support for growing businesses." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
+                    colors: { navy: '#0a1128', brand: { DEFAULT: '#0a7cff', light: '#1a9bff', cyan: '#00d4ff', dark: '#0b4fd1' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #0a7cff, #00d4ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-bg {
+            background: radial-gradient(55% 55% at 92% 0%, rgba(0, 212, 255, .20), transparent 70%), radial-gradient(45% 45% at 0% 25%, rgba(10, 124, 255, .13), transparent 70%), #fff;
+        }
+
+        .dots {
+            background-image: radial-gradient(rgba(10, 124, 255, .22) 1.4px, transparent 1.4px);
+            background-size: 22px 22px;
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .float-2 {
+            animation: float 7s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-10px)
+            }
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        .marquee {
+            animation: marquee 28s linear infinite;
+        }
+
+        [data-lucide] {
+            stroke-width: 1.8;
+        }
+
+        .ph {
+            background: linear-gradient(135deg, #0a7cff, #00d4ff);
+        }
+
+        /* image fallback */
+        .ph img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .js .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .js .reveal.show {
+            opacity: 1;
+            transform: none;
+        }
+
+        details>summary {
+            list-style: none;
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] .chev {
+            transform: rotate(180deg);
+        }
+
+        .field {
+            width: 100%;
+            border-radius: .75rem;
+            border: 1px solid #e2e8f0;
+            background: #f8fafc;
+            padding: .8rem 1rem;
+            font-size: .9rem;
+            color: #0f172a;
+            transition: .2s;
+        }
+
+        .field:focus {
+            outline: none;
+            background: #fff;
+            border-color: #0a7cff;
+            box-shadow: 0 0 0 4px rgba(10, 124, 255, .12);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-600 bg-white antialiased">
+    <script>document.documentElement.classList.add('js')</script>
+
+    <!-- Logo symbol -->
+    <svg width="0" height="0" style="position:absolute">
+        <defs>
+            <linearGradient id="gRibbon" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#00d4ff" />
+                <stop offset=".5" stop-color="#0a7cff" />
+                <stop offset="1" stop-color="#00d4ff" />
+            </linearGradient>
+            <linearGradient id="gBar" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#0a7cff" />
+                <stop offset="1" stop-color="#0b4fd1" />
+            </linearGradient>
+            <symbol id="logoN" viewBox="0 0 100 114">
+                <path d="M2 56 L2 100 L22 112 L22 62 Z" fill="url(#gBar)" />
+                <path d="M70 0 L92 12 L92 64 L70 50 Z" fill="url(#gBar)" />
+                <path d="M2 44 C2 22 24 12 44 26 L90 64 C98 71 98 84 88 88 C78 92 66 90 58 82 L18 50 C10 44 2 46 2 44 Z"
+                    fill="url(#gRibbon)" />
+            </symbol>
+        </defs>
+    </svg>
+
+  
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+        <div class="max-w-[1350px] mx-auto px-5 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <svg class="w-9 h-10">
+                    <use href="#logoN" />
+                </svg>
+                <span class="text-2xl font-extrabold tracking-tight text-navy">Neesun<span
+                        class="text-brand-light">tech</span></span>
+            </a>
+            <nav class="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-700">
+                <a href="#home" class="px-4 py-2 rounded-lg text-brand">Home</a>
+                <a href="#about" class="px-4 py-2 rounded-lg hover:text-brand">About Us</a>
+                <a href="#services" class="px-4 py-2 rounded-lg hover:text-brand">Services</a>
+                <a href="#process" class="px-4 py-2 rounded-lg hover:text-brand">How We Work</a>
+                <a href="#why" class="px-4 py-2 rounded-lg hover:text-brand">Why Us</a>
+                <a href="hrms.html" class="px-4 py-2 rounded-lg hover:text-brand flex items-center gap-1.5">HRMS <span
+                        class="rounded-full bg-brand/10 text-brand text-[10px] font-bold px-2 py-0.5">PRODUCT</span></a>
+                <a href="#contact" class="px-4 py-2 rounded-lg hover:text-brand">Contact</a>
+            </nav>
+            <div class="hidden lg:block">
+                <a href="#contact"
+                    class="rounded-full bg-gradient-to-r from-brand to-brand-cyan px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand/30 hover:opacity-90 transition">Get
+                    a Quote</a>
+            </div>
+            <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100" aria-label="Menu"><i
+                    data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+        <div id="mobileMenu"
+            class="hidden lg:hidden border-t border-slate-100 bg-white px-5 py-4 space-y-1 text-sm font-medium">
+            <a href="#home" class="block py-2.5">Home</a>
+            <a href="#about" class="block py-2.5">About Us</a>
+            <a href="#services" class="block py-2.5">Services</a>
+            <a href="#process" class="block py-2.5">How We Work</a>
+            <a href="#why" class="block py-2.5">Why Us</a>
+            <a href="hrms.html" class="block py-2.5 text-brand">HRMS Product →</a>
+            <a href="#contact" class="block py-2.5">Contact</a>
+            <a href="#contact" class="mt-2 block text-center rounded-full bg-brand text-white py-3 font-semibold">Get a
+                Quote</a>
+        </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section id="home" class="hero-bg relative overflow-hidden">
+        <div
+            class="max-w-[1350px] mx-auto px-5 pt-14 pb-28 lg:pt-20 lg:pb-36 grid lg:grid-cols-[1.05fr_1fr] gap-14 items-center">
+            <div>
+                <span
+                    class="inline-flex items-center gap-2 rounded-full bg-brand/10 text-brand px-4 py-1.5 text-xs font-bold tracking-widest"><span
+                        class="relative flex w-2 h-2"><span
+                            class="absolute inline-flex h-full w-full rounded-full bg-brand opacity-60 animate-ping"></span><span
+                            class="relative inline-flex rounded-full w-2 h-2 bg-brand"></span></span> TRUSTED IT
+                    SERVICES PARTNER</span>
+                <h1 class="mt-6 text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.1] text-navy">
+                    Digital solutions that help your <span class="gradient-text">business grow</span> faster
+                </h1>
+                <p class="mt-6 text-lg text-slate-600 max-w-xl leading-relaxed">From websites and mobile apps to custom
+                    software and cloud infrastructure — Neesuntech plans, builds and supports the technology your
+                    business depends on.</p>
+
+                <ul class="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-3 max-w-xl text-sm font-medium text-slate-700">
+                    <li class="flex items-center gap-2.5"><i data-lucide="check-circle-2"
+                            class="w-5 h-5 text-brand shrink-0"></i> Custom-built for your goals</li>
+                    <li class="flex items-center gap-2.5"><i data-lucide="check-circle-2"
+                            class="w-5 h-5 text-brand shrink-0"></i> Secure and scalable by design</li>
+                    <li class="flex items-center gap-2.5"><i data-lucide="check-circle-2"
+                            class="w-5 h-5 text-brand shrink-0"></i> Clear timelines &amp; updates</li>
+                    <li class="flex items-center gap-2.5"><i data-lucide="check-circle-2"
+                            class="w-5 h-5 text-brand shrink-0"></i> Support after launch</li>
+                </ul>
+
+                <div class="mt-9 flex flex-wrap items-center gap-4">
+                    <a href="#contact"
+                        class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand to-brand-cyan px-8 py-4 font-semibold text-white shadow-xl shadow-brand/30 hover:-translate-y-0.5 transition">Start
+                        Your Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                    <a href="#services"
+                        class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-8 py-4 font-semibold text-navy hover:border-brand hover:text-brand transition"><i
+                            data-lucide="layout-grid" class="w-4 h-4"></i> Our Services</a>
+                </div>
+
+              
+            </div>
+
+        <!-- Hero visual with image (Compact Height) -->
+        <div class="relative max-w-lg mx-auto w-full">
+            <!-- Background dots & glow accent -->
+            <div class="absolute -top-6 -right-6 w-40 h-40 dots rounded-full opacity-70"></div>
+            <div class="absolute -inset-3 bg-gradient-to-tr from-brand/25 to-brand-cyan/25 blur-2xl rounded-[2.5rem]"></div>
+        
+            <!-- Main Card Image Wrapper (Height Reduced with aspect-[4/3] & h-64/h-72 constraints) -->
+            <div
+                class="ph relative rounded-2xl overflow-hidden shadow-xl shadow-brand/20 aspect-[4/3] max-h-[380px] ring-4 ring-white">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80"
+                    alt="Developer writing code on a laptop" class="w-full h-full object-cover"
+                    onerror="this.style.display='none'" />
+        
+                <div class="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-transparent"></div>
+        
+                <!-- Bottom Overlay Info -->
+                <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
+                    <div>
+                        <p class="text-[10px] tracking-widest uppercase font-semibold text-white/80">NEESUNTECH</p>
+                        <p class="font-bold text-sm sm:text-base leading-tight">Build. Launch. Grow.</p>
+                    </div>
+                    <span class="w-8 h-8 rounded-full bg-white/20 backdrop-blur grid place-items-center shadow-sm">
+                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </span>
+                </div>
+            </div>
+        
+            <!-- Floating Cards (Adjusted positions to fit compact height) -->
+            <!-- Card 1: Project Status -->
+            <div
+                class="absolute -left-3 sm:-left-8 top-4 float rounded-xl bg-white border border-slate-100 shadow-lg p-2.5 w-44">
+                <div class="flex items-center justify-between">
+                    <p class="text-xs font-bold text-navy">Project status</p>
+                    <span class="text-[9px] font-bold text-green-600 bg-green-50 rounded-full px-1.5 py-0.5">LIVE</span>
+                </div>
+                <div class="mt-2 h-1.5 rounded-full bg-slate-100 overflow-hidden">
+                    <div class="h-full w-[88%] rounded-full bg-gradient-to-r from-brand to-brand-cyan"></div>
+                </div>
+                <p class="mt-1 text-[10px] text-slate-500">Website · Cloud deployed</p>
+            </div>
+        
+            <!-- Card 2: Secured -->
+            <div
+                class="absolute -right-3 sm:-right-6 top-1/3 float-2 rounded-xl bg-white border border-slate-100 shadow-lg p-2.5 flex items-center gap-2.5">
+                <span class="w-8 h-8 rounded-lg bg-navy text-brand-cyan grid place-items-center shrink-0">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                </span>
+                <div>
+                    <p class="text-xs font-bold text-navy leading-none">Secured</p>
+                    <p class="text-[10px] text-slate-500 mt-0.5">Data protected</p>
+                </div>
+            </div>
+        
+            <!-- Card 3: Mobile Ready -->
+            <div
+                class="absolute -left-2 sm:-left-6 -bottom-3 float-2 rounded-xl bg-white border border-slate-100 shadow-lg p-2.5 flex items-center gap-2.5">
+                <span
+                    class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand to-brand-cyan text-white grid place-items-center shrink-0">
+                    <i data-lucide="smartphone" class="w-4 h-4"></i>
+                </span>
+                <div>
+                    <p class="text-xs font-bold text-navy leading-none">Mobile ready</p>
+                    <p class="text-[10px] text-slate-500 mt-0.5">Android &amp; iOS</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Quick highlights overlapping hero -->
+    <section class="relative z-10 -mt-16 lg:-mt-20 mb-4">
+        <div class="max-w-[1350px] mx-auto px-5">
+            <div
+                class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 rounded-3xl bg-white shadow-2xl shadow-slate-300/40 border border-slate-100 p-4 lg:p-5">
+                <a href="#services" class="group flex items-center gap-4 rounded-2xl p-4 hover:bg-brand/5 transition">
+                    <span
+                        class="w-12 h-12 shrink-0 rounded-xl bg-brand/10 text-brand grid place-items-center group-hover:bg-brand group-hover:text-white transition"><i
+                            data-lucide="globe" class="w-6 h-6"></i></span>
+                    <div>
+                        <p class="font-bold text-navy">Web Development</p>
+                        <p class="text-xs text-slate-500">Websites &amp; web apps</p>
+                    </div>
+                </a>
+                <a href="#services" class="group flex items-center gap-4 rounded-2xl p-4 hover:bg-brand/5 transition">
+                    <span
+                        class="w-12 h-12 shrink-0 rounded-xl bg-brand/10 text-brand grid place-items-center group-hover:bg-brand group-hover:text-white transition"><i
+                            data-lucide="smartphone" class="w-6 h-6"></i></span>
+                    <div>
+                        <p class="font-bold text-navy">Mobile Apps</p>
+                        <p class="text-xs text-slate-500">Android &amp; iOS</p>
+                    </div>
+                </a>
+                <a href="#services" class="group flex items-center gap-4 rounded-2xl p-4 hover:bg-brand/5 transition">
+                    <span
+                        class="w-12 h-12 shrink-0 rounded-xl bg-brand/10 text-brand grid place-items-center group-hover:bg-brand group-hover:text-white transition"><i
+                            data-lucide="cloud" class="w-6 h-6"></i></span>
+                    <div>
+                        <p class="font-bold text-navy">Cloud Solutions</p>
+                        <p class="text-xs text-slate-500">Hosting &amp; migration</p>
+                    </div>
+                </a>
+                <a href="hrms.html" class="group flex items-center gap-4 rounded-2xl p-4 hover:bg-brand/5 transition">
+                    <span class="w-12 h-12 shrink-0 rounded-xl bg-navy text-brand-cyan grid place-items-center"><i
+                            data-lucide="users" class="w-6 h-6"></i></span>
+                    <div>
+                        <p class="font-bold text-navy">NeesunHR <span
+                                class="text-[10px] text-brand font-bold">NEW</span></p>
+                        <p class="text-xs text-slate-500">Our HRMS product</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT US ================= -->
+    <section id="about" class="py-20 lg:py-28">
+        <div class="max-w-[1350px] mx-auto px-5 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative reveal">
+                <div class="absolute -left-6 -bottom-6 w-40 h-40 dots rounded-full"></div>
+                <div class="relative grid grid-cols-5 gap-4">
+                    <div class="ph col-span-3 rounded-3xl overflow-hidden aspect-[3/4] shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                            alt="Team collaborating on a project" loading="lazy" onerror="this.style.display='none'" />
+                    </div>
+                    <div class="col-span-2 flex flex-col gap-4 pt-10">
+                        <div class="ph rounded-3xl overflow-hidden aspect-square shadow-xl">
+                            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80"
+                                alt="Team meeting in office" loading="lazy" onerror="this.style.display='none'" />
+                        </div>
+                        <div class="rounded-3xl bg-navy p-5 text-white shadow-xl">
+                            <i data-lucide="lightbulb" class="w-7 h-7 text-brand-cyan"></i>
+                            <p class="mt-3 text-sm font-semibold leading-snug">Technology should make business simpler.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal">
+                <p class="text-brand font-semibold tracking-widest text-sm">ABOUT NEESUNTECH</p>
+                <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy leading-tight">A technology company
+                    focused on <span class="gradient-text">brighter outcomes</span></h2>
+                <p class="mt-5 leading-relaxed">Neesuntech is an IT services company that helps businesses put
+                    technology to work. We design and develop websites, mobile apps and custom software, set up secure
+                    cloud infrastructure, and stay on as a long-term support partner.</p>
+                <p class="mt-4 leading-relaxed">Alongside our services, we have built <b class="text-navy">NeesunHR</b>
+                    — a ready-to-use HRMS for managing employees, attendance, leave and payroll — so growing companies
+                    can run HR without the paperwork.</p>
+
+                <div class="mt-8 grid sm:grid-cols-3 gap-4">
+                    <div
+                        class="rounded-2xl border border-slate-100 p-5 hover:shadow-lg hover:shadow-brand/10 transition">
+                        <span class="w-10 h-10 rounded-xl bg-brand/10 text-brand grid place-items-center"><i
+                                data-lucide="target" class="w-5 h-5"></i></span>
+                        <h3 class="mt-3 font-bold text-navy">Our Mission</h3>
+                        <p class="mt-1 text-xs leading-relaxed">Deliver reliable technology that moves our clients
+                            forward.</p>
+                    </div>
+                    <div
+                        class="rounded-2xl border border-slate-100 p-5 hover:shadow-lg hover:shadow-brand/10 transition">
+                        <span class="w-10 h-10 rounded-xl bg-brand/10 text-brand grid place-items-center"><i
+                                data-lucide="eye" class="w-5 h-5"></i></span>
+                        <h3 class="mt-3 font-bold text-navy">Our Vision</h3>
+                        <p class="mt-1 text-xs leading-relaxed">Be the technology partner businesses trust for the long
+                            run.</p>
+                    </div>
+                    <div
+                        class="rounded-2xl border border-slate-100 p-5 hover:shadow-lg hover:shadow-brand/10 transition">
+                        <span class="w-10 h-10 rounded-xl bg-brand/10 text-brand grid place-items-center"><i
+                                data-lucide="heart-handshake" class="w-5 h-5"></i></span>
+                        <h3 class="mt-3 font-bold text-navy">Our Values</h3>
+                        <p class="mt-1 text-xs leading-relaxed">Honesty, quality, clear communication and ownership.</p>
+                    </div>
+                </div>
+                <a href="#contact"
+                    class="mt-8 inline-flex items-center gap-2 font-semibold text-brand hover:gap-3 transition-all">Talk
+                    to our team <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SERVICES (with images) ================= -->
+<section id="services" class="py-16 lg:py-24 bg-slate-50">
+    <div class="max-w-[1350px] mx-auto px-5">
+        <!-- Section Header -->
+        <div class="max-w-7xl mx-auto text-center reveal">
+            <span
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide text-xs uppercase border border-brand/20">
+                Our Capabilities
+            </span>
+            <h2 class="mt-3 text-2xl sm:text-4xl font-extrabold text-navy tracking-tight">
+                IT services engineered for modern growth
+            </h2>
+            <p class="mt-3 text-sm sm:text-base text-slate-600">
+                From concept to continuous optimization, we build scalable software solutions under one roof.
+            </p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+            <!-- Service 1: Web Development -->
+            <article
+                class="group reveal relative rounded-2xl bg-white border border-slate-200/80 p-6 shadow-sm hover:shadow-xl hover:shadow-brand/10 hover:border-brand/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div>
+                    <!-- Icon Container -->
+                    <div
+                        class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/10 to-brand-cyan/20 text-brand grid place-items-center group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-brand group-hover:to-brand-cyan group-hover:text-white transition-all duration-300">
+                        <i data-lucide="globe" class="w-6 h-6"></i>
+                    </div>
+
+                    <h3 class="mt-5 text-lg font-bold text-navy group-hover:text-brand transition-colors">Website
+                        Development</h3>
+                    <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+                        Fast, SEO-optimized business websites, custom web apps, and high-converting e-commerce stores.
+                    </p>
+
+                    <!-- Feature List -->
+                    <ul class="mt-5 space-y-2 text-xs text-slate-700">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> Corporate &amp;
+                            landing pages
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> E-commerce
+                            solutions
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> Web portals &amp;
+                            dashboards
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="#contact"
+                    class="mt-6 pt-4 border-t border-slate-100 inline-flex items-center gap-1.5 text-xs font-semibold text-navy group-hover:text-brand group-hover:gap-2.5 transition-all">
+                    Explore Solutions <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+            </article>
+
+            <!-- Service 2: Mobile App Development -->
+            <article
+                class="group reveal relative rounded-2xl bg-white border border-slate-200/80 p-6 shadow-sm hover:shadow-xl hover:shadow-brand/10 hover:border-brand/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div>
+                    <div
+                        class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/10 to-brand-cyan/20 text-brand grid place-items-center group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-brand group-hover:to-brand-cyan group-hover:text-white transition-all duration-300">
+                        <i data-lucide="smartphone" class="w-6 h-6"></i>
+                    </div>
+
+                    <h3 class="mt-5 text-lg font-bold text-navy group-hover:text-brand transition-colors">Mobile App
+                        Development</h3>
+                    <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+                        High-performance cross-platform and native mobile apps with smooth UI/UX workflows.
+                    </p>
+
+                    <ul class="mt-5 space-y-2 text-xs text-slate-700">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> iOS &amp; Android
+                            development
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> Flutter &amp; React
+                            Native
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> Intuitive UI/UX
+                            design
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="#contact"
+                    class="mt-6 pt-4 border-t border-slate-100 inline-flex items-center gap-1.5 text-xs font-semibold text-navy group-hover:text-brand group-hover:gap-2.5 transition-all">
+                    Explore Solutions <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+            </article>
+
+            <!-- Service 3: Custom Software -->
+            <article
+                class="group reveal relative rounded-2xl bg-white border border-slate-200/80 p-6 shadow-sm hover:shadow-xl hover:shadow-brand/10 hover:border-brand/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div>
+                    <div
+                        class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/10 to-brand-cyan/20 text-brand grid place-items-center group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-brand group-hover:to-brand-cyan group-hover:text-white transition-all duration-300">
+                        <i data-lucide="code-2" class="w-6 h-6"></i>
+                    </div>
+
+                    <h3 class="mt-5 text-lg font-bold text-navy group-hover:text-brand transition-colors">Custom
+                        Software</h3>
+                    <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+                        Tailored business software solutions designed around your specific enterprise operations.
+                    </p>
+
+                    <ul class="mt-5 space-y-2 text-xs text-slate-700">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> Enterprise ERP
+                            &amp; CRM
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> Business process
+                            automation
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> REST API
+                            integrations
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="#contact"
+                    class="mt-6 pt-4 border-t border-slate-100 inline-flex items-center gap-1.5 text-xs font-semibold text-navy group-hover:text-brand group-hover:gap-2.5 transition-all">
+                    Explore Solutions <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+            </article>
+
+            <!-- Service 4: Cloud Solutions -->
+            <article
+                class="group reveal relative rounded-2xl bg-white border border-slate-200/80 p-6 shadow-sm hover:shadow-xl hover:shadow-brand/10 hover:border-brand/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div>
+                    <div
+                        class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/10 to-brand-cyan/20 text-brand grid place-items-center group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-brand group-hover:to-brand-cyan group-hover:text-white transition-all duration-300">
+                        <i data-lucide="cloud" class="w-6 h-6"></i>
+                    </div>
+
+                    <h3 class="mt-5 text-lg font-bold text-navy group-hover:text-brand transition-colors">Cloud
+                        Solutions</h3>
+                    <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+                        Scalable infrastructure, seamless migration, and management for cloud Environments.
+                    </p>
+
+                    <ul class="mt-5 space-y-2 text-xs text-slate-700">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> Cloud setup &amp;
+                            migration
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> DevOps &amp; server
+                            management
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> Automated backup
+                            systems
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="#contact"
+                    class="mt-6 pt-4 border-t border-slate-100 inline-flex items-center gap-1.5 text-xs font-semibold text-navy group-hover:text-brand group-hover:gap-2.5 transition-all">
+                    Explore Solutions <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+            </article>
+
+            <!-- Service 5: Cyber Security -->
+            <article
+                class="group reveal relative rounded-2xl bg-white border border-slate-200/80 p-6 shadow-sm hover:shadow-xl hover:shadow-brand/10 hover:border-brand/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div>
+                    <div
+                        class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/10 to-brand-cyan/20 text-brand grid place-items-center group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-brand group-hover:to-brand-cyan group-hover:text-white transition-all duration-300">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+
+                    <h3 class="mt-5 text-lg font-bold text-navy group-hover:text-brand transition-colors">Cyber Security
+                    </h3>
+                    <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+                        Complete risk audits, data protection policies, and proactive defense systems.
+                    </p>
+
+                    <ul class="mt-5 space-y-2 text-xs text-slate-700">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> Vulnerability
+                            audits
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> Data encryption
+                            &amp; protection
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> Access security
+                            controls
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="#contact"
+                    class="mt-6 pt-4 border-t border-slate-100 inline-flex items-center gap-1.5 text-xs font-semibold text-navy group-hover:text-brand group-hover:gap-2.5 transition-all">
+                    Explore Solutions <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+            </article>
+
+            <!-- Service 6: IT Support & Maintenance -->
+            <article
+                class="group reveal relative rounded-2xl bg-white border border-slate-200/80 p-6 shadow-sm hover:shadow-xl hover:shadow-brand/10 hover:border-brand/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div>
+                    <div
+                        class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/10 to-brand-cyan/20 text-brand grid place-items-center group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-brand group-hover:to-brand-cyan group-hover:text-white transition-all duration-300">
+                        <i data-lucide="headset" class="w-6 h-6"></i>
+                    </div>
+
+                    <h3 class="mt-5 text-lg font-bold text-navy group-hover:text-brand transition-colors">IT Support
+                        &amp; Maintenance</h3>
+                    <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+                        24/7 system monitoring, fast bug resolutions, and continuous system optimization.
+                    </p>
+
+                    <ul class="mt-5 space-y-2 text-xs text-slate-700">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> Annual maintenance
+                            (AMC)
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> Bug fixing &amp;
+                            upgrades
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand shrink-0"></i> Dedicated tech
+                            support
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="#contact"
+                    class="mt-6 pt-4 border-t border-slate-100 inline-flex items-center gap-1.5 text-xs font-semibold text-navy group-hover:text-brand group-hover:gap-2.5 transition-all">
+                    Explore Solutions <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Tech marquee -->
+    <section class="py-10 border-y border-slate-100 overflow-hidden bg-white">
+        <p class="text-center text-xs tracking-[0.3em] text-slate-400 font-semibold mb-6">TECHNOLOGIES WE WORK WITH</p>
+        <div class="relative">
+            <div class="marquee flex w-max gap-12 text-slate-400 font-bold text-xl">
+                <span>React</span><span>Node.js</span><span>PHP /
+                    Laravel</span><span>Python</span><span>Flutter</span><span>AWS</span><span>MySQL</span><span>MongoDB</span><span>Tailwind
+                    CSS</span><span>Docker</span>
+                <span>React</span><span>Node.js</span><span>PHP /
+                    Laravel</span><span>Python</span><span>Flutter</span><span>AWS</span><span>MySQL</span><span>MongoDB</span><span>Tailwind
+                    CSS</span><span>Docker</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= INDUSTRIES ================= -->
+    <section class="py-20 lg:py-24">
+        <div class="max-w-[1350px] mx-auto px-5">
+            <div class="max-w-2xl mx-auto text-center reveal">
+                <p class="text-brand font-semibold tracking-widest text-sm">INDUSTRIES</p>
+                <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy">Solutions for every kind of business</h2>
+            </div>
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div
+                    class="reveal rounded-2xl border border-slate-100 p-6 text-center hover:border-brand/40 hover:shadow-xl hover:shadow-brand/10 transition">
+                    <span class="mx-auto w-12 h-12 rounded-xl bg-brand/10 text-brand grid place-items-center"><i
+                            data-lucide="graduation-cap" class="w-6 h-6"></i></span>
+                    <p class="mt-3 text-sm font-semibold text-navy">Education</p>
+                </div>
+                <div
+                    class="reveal rounded-2xl border border-slate-100 p-6 text-center hover:border-brand/40 hover:shadow-xl hover:shadow-brand/10 transition">
+                    <span class="mx-auto w-12 h-12 rounded-xl bg-brand/10 text-brand grid place-items-center"><i
+                            data-lucide="heart-pulse" class="w-6 h-6"></i></span>
+                    <p class="mt-3 text-sm font-semibold text-navy">Healthcare</p>
+                </div>
+                <div
+                    class="reveal rounded-2xl border border-slate-100 p-6 text-center hover:border-brand/40 hover:shadow-xl hover:shadow-brand/10 transition">
+                    <span class="mx-auto w-12 h-12 rounded-xl bg-brand/10 text-brand grid place-items-center"><i
+                            data-lucide="shopping-bag" class="w-6 h-6"></i></span>
+                    <p class="mt-3 text-sm font-semibold text-navy">Retail &amp; E-commerce</p>
+                </div>
+                <div
+                    class="reveal rounded-2xl border border-slate-100 p-6 text-center hover:border-brand/40 hover:shadow-xl hover:shadow-brand/10 transition">
+                    <span class="mx-auto w-12 h-12 rounded-xl bg-brand/10 text-brand grid place-items-center"><i
+                            data-lucide="factory" class="w-6 h-6"></i></span>
+                    <p class="mt-3 text-sm font-semibold text-navy">Manufacturing</p>
+                </div>
+                <div
+                    class="reveal rounded-2xl border border-slate-100 p-6 text-center hover:border-brand/40 hover:shadow-xl hover:shadow-brand/10 transition">
+                    <span class="mx-auto w-12 h-12 rounded-xl bg-brand/10 text-brand grid place-items-center"><i
+                            data-lucide="landmark" class="w-6 h-6"></i></span>
+                    <p class="mt-3 text-sm font-semibold text-navy">Finance</p>
+                </div>
+                <div
+                    class="reveal rounded-2xl border border-slate-100 p-6 text-center hover:border-brand/40 hover:shadow-xl hover:shadow-brand/10 transition">
+                    <span class="mx-auto w-12 h-12 rounded-xl bg-brand/10 text-brand grid place-items-center"><i
+                            data-lucide="rocket" class="w-6 h-6"></i></span>
+                    <p class="mt-3 text-sm font-semibold text-navy">Startups</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= HRMS PRODUCT BANNER ================= -->
+    <section class="pb-20 lg:pb-24">
+        <div class="max-w-[1350px] mx-auto px-5">
+            <div
+                class="reveal relative overflow-hidden rounded-3xl bg-navy p-8 sm:p-12 lg:p-14 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-center">
+                <div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-brand/30 blur-3xl"></div>
+                <div class="relative">
+                    <span
+                        class="inline-flex items-center gap-2 rounded-full bg-white/10 text-brand-cyan px-4 py-1.5 text-xs font-bold tracking-widest"><i
+                            data-lucide="users" class="w-3.5 h-3.5"></i> OUR PRODUCT</span>
+                    <h2 class="mt-5 text-2xl sm:text-4xl font-extrabold text-white leading-tight">Looking for HR
+                        software? Meet <span class="gradient-text">NeesunHR</span></h2>
+                    <p class="mt-4 text-slate-300 max-w-xl">Our ready-to-use HRMS for employee management, attendance,
+                        leave and payroll — built by Neesuntech.</p>
+                    <ul class="mt-6 grid sm:grid-cols-2 gap-3 text-sm text-slate-200">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-cyan"></i>
+                            Attendance &amp; shifts</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-cyan"></i>
+                            Leave management</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-cyan"></i>
+                            Payroll &amp; payslips</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-cyan"></i>
+                            Reports &amp; analytics</li>
+                    </ul>
+                    <a href="hrms.html"
+                        class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-bold text-navy hover:bg-brand-cyan transition">Explore
+                        HRMS <i data-lucide="arrow-up-right" class="w-5 h-5"></i></a>
+                </div>
+                <div class="relative hidden lg:block">
+                    <div class="float rounded-2xl bg-white p-5 shadow-2xl">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2"><svg class="w-5 h-6">
+                                    <use href="#logoN" />
+                                </svg><span class="text-sm font-bold text-navy">NeesunHR</span></div><span
+                                class="text-[11px] text-slate-400">Dashboard</span>
+                        </div>
+                        <div class="mt-4 grid grid-cols-3 gap-2">
+                            <div class="rounded-lg bg-brand/10 p-2.5">
+                                <p class="text-[10px] text-slate-500">Employees</p>
+                                <p class="font-bold text-navy">248</p>
+                            </div>
+                            <div class="rounded-lg bg-brand-cyan/10 p-2.5">
+                                <p class="text-[10px] text-slate-500">Present</p>
+                                <p class="font-bold text-navy">231</p>
+                            </div>
+                            <div class="rounded-lg bg-navy p-2.5">
+                                <p class="text-[10px] text-slate-300">Leave</p>
+                                <p class="font-bold text-white">9</p>
+                            </div>
+                        </div>
+                        <div class="mt-3 flex items-end gap-1.5 h-16">
+                            <div class="flex-1 rounded-t bg-brand/30 h-[55%]"></div>
+                            <div class="flex-1 rounded-t bg-brand/50 h-[70%]"></div>
+                            <div class="flex-1 rounded-t bg-brand/70 h-[85%]"></div>
+                            <div class="flex-1 rounded-t bg-brand h-[95%]"></div>
+                            <div class="flex-1 rounded-t bg-brand-cyan h-[88%]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROCESS ================= -->
+    <section id="process" class="py-20 lg:py-24 bg-slate-50">
+        <div class="max-w-[1350px] mx-auto px-5">
+            <div class="max-w-2xl mx-auto text-center reveal">
+                <p class="text-brand font-semibold tracking-widest text-sm">HOW WE WORK</p>
+                <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy">A simple, transparent process</h2>
+                <p class="mt-4">Four clear steps — so you always know what is happening and what comes next.</p>
+            </div>
+            <div class="relative mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div
+                    class="hidden lg:block absolute top-14 left-[12%] right-[12%] border-t-2 border-dashed border-brand/30">
+                </div>
+                <div class="reveal relative rounded-2xl bg-white p-7 border border-slate-100 text-center">
+                    <span
+                        class="relative mx-auto w-14 h-14 rounded-2xl bg-gradient-to-br from-brand to-brand-cyan text-white grid place-items-center shadow-lg shadow-brand/30"><i
+                            data-lucide="message-square-text" class="w-7 h-7"></i></span>
+                    <p class="mt-4 text-xs font-bold text-brand tracking-widest">STEP 01</p>
+                    <h3 class="mt-1 font-bold text-navy text-lg">Discover</h3>
+                    <p class="mt-2 text-sm">We listen to your goals and understand your requirements.</p>
+                </div>
+                <div class="reveal relative rounded-2xl bg-white p-7 border border-slate-100 text-center">
+                    <span
+                        class="relative mx-auto w-14 h-14 rounded-2xl bg-gradient-to-br from-brand to-brand-cyan text-white grid place-items-center shadow-lg shadow-brand/30"><i
+                            data-lucide="pen-tool" class="w-7 h-7"></i></span>
+                    <p class="mt-4 text-xs font-bold text-brand tracking-widest">STEP 02</p>
+                    <h3 class="mt-1 font-bold text-navy text-lg">Design</h3>
+                    <p class="mt-2 text-sm">Wireframes and UI designs for your approval before we build.</p>
+                </div>
+                <div class="reveal relative rounded-2xl bg-white p-7 border border-slate-100 text-center">
+                    <span
+                        class="relative mx-auto w-14 h-14 rounded-2xl bg-gradient-to-br from-brand to-brand-cyan text-white grid place-items-center shadow-lg shadow-brand/30"><i
+                            data-lucide="code" class="w-7 h-7"></i></span>
+                    <p class="mt-4 text-xs font-bold text-brand tracking-widest">STEP 03</p>
+                    <h3 class="mt-1 font-bold text-navy text-lg">Develop</h3>
+                    <p class="mt-2 text-sm">Clean, tested code with regular progress updates.</p>
+                </div>
+                <div class="reveal relative rounded-2xl bg-white p-7 border border-slate-100 text-center">
+                    <span
+                        class="relative mx-auto w-14 h-14 rounded-2xl bg-gradient-to-br from-brand to-brand-cyan text-white grid place-items-center shadow-lg shadow-brand/30"><i
+                            data-lucide="rocket" class="w-7 h-7"></i></span>
+                    <p class="mt-4 text-xs font-bold text-brand tracking-widest">STEP 04</p>
+                    <h3 class="mt-1 font-bold text-navy text-lg">Launch &amp; Support</h3>
+                    <p class="mt-2 text-sm">Go live smoothly, with ongoing maintenance after launch.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ================= WHY US ================= -->
+<section id="why" class="py-20 lg:py-28 bg-white relative overflow-hidden">
+    <div class="max-w-[1350px] mx-auto px-5 grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Left Side: Content & Features -->
+        <div class="reveal">
+            <span
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide text-xs uppercase border border-brand/20">
+                Why Neesuntech
+            </span>
+            <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy tracking-tight leading-tight">
+                A technology partner you can truly rely on
+            </h2>
+            <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                We combine deep technical engineering with absolute transparency, ensuring you're always aligned on
+                project progress.
+            </p>
+
+            <!-- Features Grid -->
+            <div class="mt-8 grid sm:grid-cols-2 gap-4">
+
+                <!-- Feature 1 -->
+                <div
+                    class="group p-4 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5 transition-all duration-300 flex gap-3.5 items-start">
+                    <span
+                        class="w-10 h-10 shrink-0 rounded-xl bg-brand/10 text-brand grid place-items-center group-hover:bg-brand group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="gauge" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                        <h3 class="font-bold text-navy text-sm sm:text-base">On-Time Delivery</h3>
+                        <p class="mt-0.5 text-xs text-slate-500">Clear timelines &amp; strict milestone tracking.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="group p-4 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5 transition-all duration-300 flex gap-3.5 items-start">
+                    <span
+                        class="w-10 h-10 shrink-0 rounded-xl bg-brand/10 text-brand grid place-items-center group-hover:bg-brand group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                        <h3 class="font-bold text-navy text-sm sm:text-base">Secure by Design</h3>
+                        <p class="mt-0.5 text-xs text-slate-500">Robust security built in from day one.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="group p-4 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5 transition-all duration-300 flex gap-3.5 items-start">
+                    <span
+                        class="w-10 h-10 shrink-0 rounded-xl bg-brand/10 text-brand grid place-items-center group-hover:bg-brand group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="trending-up" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                        <h3 class="font-bold text-navy text-sm sm:text-base">Built to Scale</h3>
+                        <p class="mt-0.5 text-xs text-slate-500">Scalable architectures that grow with you.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="group p-4 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5 transition-all duration-300 flex gap-3.5 items-start">
+                    <span
+                        class="w-10 h-10 shrink-0 rounded-xl bg-brand/10 text-brand grid place-items-center group-hover:bg-brand group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="handshake" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                        <h3 class="font-bold text-navy text-sm sm:text-base">Dedicated Support</h3>
+                        <p class="mt-0.5 text-xs text-slate-500">Long-term engineering partnerships.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div
+                    class="group p-4 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5 transition-all duration-300 flex gap-3.5 items-start">
+                    <span
+                        class="w-10 h-10 shrink-0 rounded-xl bg-brand/10 text-brand grid place-items-center group-hover:bg-brand group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="eye" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                        <h3 class="font-bold text-navy text-sm sm:text-base">Full Transparency</h3>
+                        <p class="mt-0.5 text-xs text-slate-500">Regular updates with zero hidden surprises.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div
+                    class="group p-4 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5 transition-all duration-300 flex gap-3.5 items-start">
+                    <span
+                        class="w-10 h-10 shrink-0 rounded-xl bg-brand/10 text-brand grid place-items-center group-hover:bg-brand group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="wallet" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                        <h3 class="font-bold text-navy text-sm sm:text-base">Value for Money</h3>
+                        <p class="mt-0.5 text-xs text-slate-500">Competitive pricing with top-tier output.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Side: Image & Floating Badge -->
+    <!-- Right Side: Image & Floating Badge (Compact Height) -->
+    <div class="reveal relative">
+        <div class="absolute -inset-3 bg-gradient-to-tr from-brand/20 to-brand-cyan/20 blur-2xl rounded-[2.5rem]"></div>
+    
+        <!-- Height reduced using aspect-[16/10] and max-h constraint -->
+        <div
+            class="ph relative rounded-2xl overflow-hidden aspect-[16/10] max-h-[380px] shadow-xl ring-1 ring-slate-900/10">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80"
+                alt="Team working together" loading="lazy" onerror="this.style.display='none'"
+                class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent"></div>
+        </div>
+    
+        <!-- Floating Card -->
+        <div
+            class="absolute -bottom-5 -left-3 sm:-left-6 float rounded-xl bg-white border border-slate-100 shadow-xl p-3.5 flex items-center gap-3">
+            <span
+                class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand to-brand-cyan text-white grid place-items-center shadow-md">
+                <i data-lucide="headset" class="w-5 h-5"></i>
+            </span>
+            <div>
+                <p class="font-bold text-navy text-xs sm:text-sm">Support after launch</p>
+                <p class="text-[11px] text-slate-500">We stay with you every step</p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</section>
+
+    <!-- ================= FAQ ================= -->
+    <section id="faq" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-5">
+            <div class="text-center reveal">
+                <p class="text-brand font-semibold tracking-widest text-sm">FAQ</p>
+                <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy">Questions we often hear</h2>
+            </div>
+            <div class="mt-10 space-y-4">
+                <details class="reveal rounded-2xl bg-white border border-slate-100 p-6" open>
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-navy">How
+                        do you price a project? <i data-lucide="chevron-down"
+                            class="chev w-5 h-5 shrink-0 transition"></i></summary>
+                    <p class="mt-3 text-sm leading-relaxed">After understanding your requirements we share a clear
+                        scope, timeline and quote. Fixed-price and monthly support plans are both possible.</p>
+                </details>
+                <details class="reveal rounded-2xl bg-white border border-slate-100 p-6">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-navy">How
+                        long does a typical project take? <i data-lucide="chevron-down"
+                            class="chev w-5 h-5 shrink-0 transition"></i></summary>
+                    <p class="mt-3 text-sm leading-relaxed">A business website can take a few weeks; larger web apps,
+                        mobile apps or custom software take longer. We give you a milestone-based timeline before we
+                        start.</p>
+                </details>
+                <details class="reveal rounded-2xl bg-white border border-slate-100 p-6">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-navy">Do
+                        you provide support after launch? <i data-lucide="chevron-down"
+                            class="chev w-5 h-5 shrink-0 transition"></i></summary>
+                    <p class="mt-3 text-sm leading-relaxed">Yes. We offer maintenance, updates and helpdesk support so
+                        your solution keeps running smoothly.</p>
+                </details>
+                <details class="reveal rounded-2xl bg-white border border-slate-100 p-6">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-navy">Do
+                        you offer ready-made software too? <i data-lucide="chevron-down"
+                            class="chev w-5 h-5 shrink-0 transition"></i></summary>
+                    <p class="mt-3 text-sm leading-relaxed">Yes — <a href="hrms.html"
+                            class="text-brand font-semibold">NeesunHR</a>, our HRMS, is a ready-to-use product for
+                        attendance, leave and payroll.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+
+<section id="contact" class="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
+    <!-- Background Decoration -->
+    <div class="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-brand/5 blur-3xl"></div>
+    <div class="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-cyan-100/30 blur-3xl"></div>
+
+    <div class="relative mx-auto max-w-[1350px] px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Heading -->
+        <div class="mx-auto mb-10 max-w-7xl text-center sm:mb-14">
+            <span
+                class="inline-flex items-center gap-2 rounded-full border border-brand/15 bg-brand/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-brand sm:text-sm">
+                <i data-lucide="message-circle" class="h-4 w-4"></i>
+                Contact Us
+            </span>
+
+            <h2 class="mt-5 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl lg:text-5xl">
+                Let's Build Something
+                <span class="bg-gradient-to-r from-brand to-brand-cyan bg-clip-text text-transparent">
+                    Amazing Together.
+                </span>
+            </h2>
+
+            <p class="mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-500 sm:text-base">
+                Have a project in mind? Tell us about your goals and our team
+                will help you find the right technology solution.
+            </p>
+        </div>
+
+        <!-- Main Contact Card -->
+        <div
+            class="overflow-hidden rounded-2xl  border-slate-200 bg-whit ">
+
+            <div class="grid lg:grid-cols-12">
+
+                <!-- Left Contact Information -->
+            <div
+                class="relative overflow-hidden bg-white p-6 text-slate-800 shadow sm:p-9 lg:col-span-4 lg:p-10 border border-slate-100 rounded-2xl mb-6">
+            
+                <!-- Decorative Circles -->
+                <div class="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full border border-slate-100">
+                </div>
+                <div class="pointer-events-none absolute -right-8 -top-8 h-36 w-36 rounded-full border border-slate-100">
+                </div>
+                <div class="pointer-events-none absolute -bottom-20 -left-16 h-56 w-56 rounded-full bg-slate-50">
+                </div>
+            
+                <div class="relative z-10">
+                    <div
+                        class="mb-7 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-sky-100 bg-sky-50 text-sky-600">
+                        <i data-lucide="headset" class="h-6 w-6"></i>
+                    </div>
+            
+                    <h3 class="text-2xl font-bold leading-snug sm:text-3xl text-slate-900">
+                        Get in Touch
+                        <br />
+                        With Our Team
+                    </h3>
+            
+                    <p class="mt-4 text-sm leading-7 text-slate-600">
+                        We're here to understand your requirements, answer
+                        your questions, and turn your ideas into reality.
+                    </p>
+            
+                    <!-- Contact Details -->
+                    <div class="mt-9 space-y-4">
+            
+                        <!-- Email -->
+                        <a href="mailto:info@neesuntech.com"
+                            class="group flex items-start gap-4 rounded-xl border border-slate-200/80 bg-slate-50/50 p-4 transition duration-300 hover:border-sky-300 hover:bg-sky-50/40">
+                            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-600">
+                                <i data-lucide="mail" class="h-5 w-5"></i>
+                            </span>
+                            <span class="min-w-0 pt-0.5">
+                                <span class="block text-xs font-medium text-slate-500">Email Address</span>
+                                <span class="mt-1 block break-all text-sm font-semibold text-slate-900">
+                                    info@neesuntech.com
+                                </span>
+                            </span>
+                        </a>
+            
+                        <!-- Phone -->
+                        <a href="tel:+910000000000"
+                            class="group flex items-start gap-4 rounded-xl border border-slate-200/80 bg-slate-50/50 p-4 transition duration-300 hover:border-sky-300 hover:bg-sky-50/40">
+                            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-600">
+                                <i data-lucide="phone" class="h-5 w-5"></i>
+                            </span>
+                            <span class="min-w-0 pt-0.5">
+                                <span class="block text-xs font-medium text-slate-500">Call Us</span>
+                                <span class="mt-1 block text-sm font-semibold text-slate-900">
+                                    +91 00000 00000
+                                </span>
+                            </span>
+                        </a>
+            
+                        <!-- Business Hours -->
+                        <div class="flex items-start gap-4 rounded-xl border border-slate-200/80 bg-slate-50/50 p-4">
+                            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-600">
+                                <i data-lucide="clock-3" class="h-5 w-5"></i>
+                            </span>
+                            <span class="min-w-0 pt-0.5">
+                                <span class="block text-xs font-medium text-slate-500">Business Hours</span>
+                                <span class="mt-1 block text-sm font-semibold text-slate-900">
+                                    Monday – Saturday
+                                </span>
+                                <span class="mt-1 block text-xs text-slate-600">
+                                    10:00 AM – 7:00 PM
+                                </span>
+                            </span>
+                        </div>
+            
+                    </div>
+            
+                    <!-- Response Time -->
+                    <div class="mt-7 flex items-center gap-3 border-t border-slate-200 pt-6">
+                        <span
+                            class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                            <i data-lucide="check-circle-2" class="h-5 w-5"></i>
+                        </span>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-900">We're here to help</p>
+                            <p class="mt-1 text-xs text-slate-500">We aim to respond within 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Right Contact Form -->
+                <div class="p-5 sm:p-8 lg:col-span-8 lg:p-10 xl:p-12">
+
+                    <div class="mb-8 flex items-start justify-between gap-4">
+                        <div>
+                            <h3 class="text-xl font-bold tracking-tight text-navy sm:text-2xl">
+                                Send Us a Message
+                            </h3>
+                            <p class="mt-2 text-sm leading-6 text-slate-500">
+                                Share a few details and we'll get back to you shortly.
+                            </p>
+                        </div>
+
+                        <div
+                            class="hidden h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand/5 text-brand sm:flex">
+                            <i data-lucide="send" class="h-5 w-5"></i>
+                        </div>
+                    </div>
+
+                    <form id="contactForm" class="space-y-5">
+
+                        <!-- Row 1 -->
+                        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+
+                            <div>
+                                <label for="name" class="mb-2 block text-sm font-semibold text-slate-700">
+                                    Full Name <span class="text-rose-500">*</span>
+                                </label>
+                                <div class="relative">
+                                    <i data-lucide="user-round"
+                                        class="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"></i>
+                                    <input required type="text" id="name" name="name" autocomplete="name"
+                                        placeholder="Enter your full name"
+                                        class="w-full rounded-xl border border-slate-200 bg-slate-50/70 py-3 pl-10 pr-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/10" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="email" class="mb-2 block text-sm font-semibold text-slate-700">
+                                    Email Address <span class="text-rose-500">*</span>
+                                </label>
+                                <div class="relative">
+                                    <i data-lucide="mail"
+                                        class="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"></i>
+                                    <input required type="email" id="email" name="email" autocomplete="email"
+                                        placeholder="you@example.com"
+                                        class="w-full rounded-xl border border-slate-200 bg-slate-50/70 py-3 pl-10 pr-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/10" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+
+                            <div>
+                                <label for="phone" class="mb-2 block text-sm font-semibold text-slate-700">
+                                    Phone Number
+                                </label>
+                                <div class="relative">
+                                    <i data-lucide="phone"
+                                        class="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"></i>
+                                    <input type="tel" id="phone" name="phone" autocomplete="tel"
+                                        placeholder="+91 Enter phone number"
+                                        class="w-full rounded-xl border border-slate-200 bg-slate-50/70 py-3 pl-10 pr-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/10" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="company" class="mb-2 block text-sm font-semibold text-slate-700">
+                                    Company Name
+                                </label>
+                                <div class="relative">
+                                    <i data-lucide="building-2"
+                                        class="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"></i>
+                                    <input type="text" id="company" name="company" autocomplete="organization"
+                                        placeholder="Your company name"
+                                        class="w-full rounded-xl border border-slate-200 bg-slate-50/70 py-3 pl-10 pr-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/10" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+
+                            <div>
+                                <label for="service" class="mb-2 block text-sm font-semibold text-slate-700">
+                                    Service Needed <span class="text-rose-500">*</span>
+                                </label>
+                                <select required id="service" name="service"
+                                    class="w-full appearance-none rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm text-slate-600 outline-none transition hover:border-slate-300 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/10">
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option>Website Development</option>
+                                    <option>Mobile App Development</option>
+                                    <option>Custom Software</option>
+                                    <option>Cloud Solutions</option>
+                                    <option>Cyber Security</option>
+                                    <option>IT Support &amp; Maintenance</option>
+                                    <option>NeesunHR (HRMS)</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="budget" class="mb-2 block text-sm font-semibold text-slate-700">
+                                    Estimated Budget
+                                </label>
+                                <select id="budget" name="budget"
+                                    class="w-full appearance-none rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm text-slate-600 outline-none transition hover:border-slate-300 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/10">
+                                    <option value="" selected>Select your budget</option>
+                                    <option>Under ₹50,000</option>
+                                    <option>₹50,000 – ₹2,00,000</option>
+                                    <option>₹2,00,000 – ₹5,00,000</option>
+                                    <option>₹5,00,000+</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <!-- Project Details -->
+                        <div>
+                            <label for="msg" class="mb-2 block text-sm font-semibold text-slate-700">
+                                Project Details <span class="text-rose-500">*</span>
+                            </label>
+                            <textarea required id="msg" name="message" rows="4"
+                                placeholder="Tell us about your project, goals, requirements, or challenges..."
+                                class="w-full resize-y rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm leading-6 text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/10"></textarea>
+                        </div>
+
+                        <!-- Submit Footer -->
+                        <div
+                            class="flex flex-col gap-4 border-t border-slate-100 pt-5 sm:flex-row sm:items-center sm:justify-between">
+
+                            <div class="flex items-start gap-2 text-xs leading-5 text-slate-500">
+                                <i data-lucide="shield-check" class="mt-0.5 h-4 w-4 shrink-0 text-emerald-600"></i>
+                                <span>Your information is kept private and confidential.</span>
+                            </div>
+
+                            <button type="submit"
+                                class="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand to-brand-cyan px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand/20 transition duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/25 focus:outline-none focus:ring-4 focus:ring-brand/20 sm:w-auto">
+                                Send Message
+                                <i data-lucide="arrow-right"
+                                    class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"></i>
+                            </button>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        
+
+    </div>
+</section>
+
+
+    <!-- ================= FOOTER (light) ================= -->
+    <footer class="bg-slate-50 border-t border-slate-200 text-slate-600">
+        <div class="max-w-[1350px] mx-auto px-5 pt-16 pb-10 grid sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] gap-10">
+            <div>
+                <a href="index.html" class="flex items-center gap-2"><svg class="w-9 h-10">
+                        <use href="#logoN" />
+                    </svg><span class="text-2xl font-extrabold tracking-tight text-navy">Neesun<span
+                            class="text-brand-light">tech</span></span></a>
+                <p class="mt-4 text-sm leading-relaxed max-w-xs">IT services and HR software for growing businesses.
+                    Technology for a brighter tomorrow.</p>
+                <div class="mt-5 flex gap-3">
+                    <a href="#" aria-label="LinkedIn"
+                        class="w-10 h-10 rounded-full bg-white border border-slate-200 text-slate-500 grid place-items-center hover:bg-brand hover:text-white hover:border-brand transition"><i
+                            data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    <a href="#" aria-label="Facebook"
+                        class="w-10 h-10 rounded-full bg-white border border-slate-200 text-slate-500 grid place-items-center hover:bg-brand hover:text-white hover:border-brand transition"><i
+                            data-lucide="facebook" class="w-4 h-4"></i></a>
+                    <a href="#" aria-label="Instagram"
+                        class="w-10 h-10 rounded-full bg-white border border-slate-200 text-slate-500 grid place-items-center hover:bg-brand hover:text-white hover:border-brand transition"><i
+                            data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" aria-label="Twitter"
+                        class="w-10 h-10 rounded-full bg-white border border-slate-200 text-slate-500 grid place-items-center hover:bg-brand hover:text-white hover:border-brand transition"><i
+                            data-lucide="twitter" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+            <div class="text-sm">
+                <h4 class="font-bold text-navy mb-4">Services</h4>
+                <ul class="space-y-2.5">
+                    <li><a href="#services" class="hover:text-brand">Website Development</a></li>
+                    <li><a href="#services" class="hover:text-brand">Mobile Apps</a></li>
+                    <li><a href="#services" class="hover:text-brand">Custom Software</a></li>
+                    <li><a href="#services" class="hover:text-brand">Cloud Solutions</a></li>
+                    <li><a href="#services" class="hover:text-brand">IT Support</a></li>
+                </ul>
+            </div>
+            <div class="text-sm">
+                <h4 class="font-bold text-navy mb-4">Company</h4>
+                <ul class="space-y-2.5">
+                    <li><a href="#about" class="hover:text-brand">About Us</a></li>
+                    <li><a href="#process" class="hover:text-brand">How We Work</a></li>
+                    <li><a href="#why" class="hover:text-brand">Why Us</a></li>
+                    <li><a href="#faq" class="hover:text-brand">FAQ</a></li>
+                    <li><a href="hrms.html" class="hover:text-brand">NeesunHR (HRMS)</a></li>
+                </ul>
+            </div>
+            <div class="text-sm">
+                <h4 class="font-bold text-navy mb-4">Contact</h4>
+                <ul class="space-y-3">
+                    <li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 mt-0.5 text-brand shrink-0"></i>
+                        info@neesuntech.com</li>
+                    <li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 mt-0.5 text-brand shrink-0"></i> +91
+                        00000 00000</li>
+                    <li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5 text-brand shrink-0"></i> Your
+                        office address here</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-slate-200">
+            <div
+                class="max-w-[1350px] mx-auto px-5 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
+                <p>© <span id="yr"></span> Neesuntech. All rights reserved.</p>
+                <p class="tracking-widest">TECHNOLOGY FOR A BRIGHTER TOMORROW</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        document.getElementById('yr').textContent = new Date().getFullYear();
+
+        // mobile menu
+        const menu = document.getElementById('mobileMenu');
+        document.getElementById('menuBtn').addEventListener('click', () => menu.classList.toggle('hidden'));
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.add('hidden')));
+
+        // scroll reveal
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // contact form (demo: replace with your backend / Formspree)
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById('formMsg').classList.remove('hidden');
+            e.target.reset();
+        });
+    </script>
+</body>
+
+</html>

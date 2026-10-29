@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeesunHR – HRMS Software for Attendance, Leave &amp; Payroll | Neesuntech</title>
+    <meta name="description"
+        content="NeesunHR by Neesuntech is a complete HRMS to manage employees, attendance, leave, payroll and reports in one platform." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
+                    colors: { navy: '#0a1128', brand: { DEFAULT: '#0a7cff', light: '#1a9bff', cyan: '#00d4ff', dark: '#0b4fd1' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #0a7cff, #00d4ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-bg {
+            background: radial-gradient(55% 55% at 95% 0%, rgba(0, 212, 255, .18), transparent 70%), radial-gradient(45% 45% at 0% 30%, rgba(10, 124, 255, .12), transparent 70%), #fff;
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .float-2 {
+            animation: float 7s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-10px)
+            }
+        }
+
+        [data-lucide] {
+            stroke-width: 1.8;
+        }
+
+        details>summary {
+            list-style: none;
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] .chev {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-600 bg-white antialiased">
+
+    <svg width="0" height="0" style="position:absolute">
+        <defs>
+            <linearGradient id="gRibbon" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#00d4ff" />
+                <stop offset=".5" stop-color="#0a7cff" />
+                <stop offset="1" stop-color="#00d4ff" />
+            </linearGradient>
+            <linearGradient id="gBar" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#0a7cff" />
+                <stop offset="1" stop-color="#0b4fd1" />
+            </linearGradient>
+            <symbol id="logoN" viewBox="0 0 100 114">
+                <path d="M2 56 L2 100 L22 112 L22 62 Z" fill="url(#gBar)" />
+                <path d="M70 0 L92 12 L92 64 L70 50 Z" fill="url(#gBar)" />
+                <path d="M2 44 C2 22 24 12 44 26 L90 64 C98 71 98 84 88 88 C78 92 66 90 58 82 L18 50 C10 44 2 46 2 44 Z"
+                    fill="url(#gRibbon)" />
+            </symbol>
+        </defs>
+    </svg>
+
+
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-5 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <svg class="w-9 h-10">
+                    <use href="#logoN" />
+                </svg>
+                <span class="text-2xl font-extrabold tracking-tight text-navy">Neesun<span
+                        class="text-brand-light">tech</span></span>
+            </a>
+            <nav class="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-700">
+                <a href="index.html" class="px-4 py-2 rounded-lg hover:text-brand flex items-center gap-1.5">
+                        Home</a>
+                <a href="#features" class="px-4 py-2 rounded-lg hover:text-brand">Features</a>
+                <a href="#how" class="px-4 py-2 rounded-lg hover:text-brand">How It Works</a>
+                <a href="#modules" class="px-4 py-2 rounded-lg hover:text-brand">Modules</a>
+         
+                <a href="#demo" class="px-4 py-2 rounded-lg hover:text-brand">Contact</a>
+            </nav>
+            <div class="hidden lg:flex items-center gap-3">
+              
+                <a href="#demo"
+                    class="rounded-full bg-gradient-to-r from-brand to-brand-cyan px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand/30 hover:opacity-90 transition">Book
+                    a Demo</a>
+            </div>
+            <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100" aria-label="Menu"><i
+                    data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+        <div id="mobileMenu"
+            class="hidden lg:hidden border-t border-slate-100 bg-white px-5 py-4 space-y-1 text-sm font-medium">
+            <a href="index.html" class="block py-2.5">← Main Website</a>
+            <a href="#features" class="block py-2.5">Features</a>
+            <a href="#how" class="block py-2.5">How It Works</a>
+            <a href="#modules" class="block py-2.5">Modules</a>
+   
+            <a href="#demo" class="block py-2.5">Contact</a>
+            <div class="grid grid-cols-2 gap-3 pt-3">
+                <a href="https://app.neesuntech.com" target="_blank"
+                    class="text-center rounded-xl border border-slate-200 py-2.5">Web App</a>
+                <a href="https://admin.neesuntech.com" target="_blank"
+                    class="text-center rounded-xl border border-slate-200 py-2.5">Admin Login</a>
+            </div>
+        </div>
+    </header>
+
+<!-- HERO SECTION WITH UPDATED HRMS DASHBOARD IMAGE -->
+<section class="relative overflow-hidden bg-slate-50 py-16 lg:py-24">
+
+    <!-- Ambient Glow Effects -->
+    <div class="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-sky-200/40 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-slate-200/60 blur-3xl">
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-12 lg:items-center">
+
+            <!-- LEFT COLUMN: Content -->
+            <div class="lg:col-span-5">
+                <span
+                    class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1.5 text-xs font-bold tracking-widest text-sky-700 uppercase">
+                    <i data-lucide="users" class="h-3.5 w-3.5"></i> NEESUNHR · HRMS SOFTWARE
+                </span>
+
+                <h1 class="mt-6 text-4xl font-extrabold leading-[1.15] text-slate-900 sm:text-5xl lg:text-[3.2rem]">
+                    Simplify HR. <span
+                        class="bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">Empower your
+                        people.</span>
+                </h1>
+
+                <p class="mt-6 text-base text-slate-600 sm:text-lg">
+                    NeesunHR brings employee records, attendance, leave, and payroll into one easy platform — so your HR
+                    team saves time and your employees stay happy.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="#demo"
+                        class="inline-flex items-center gap-2 rounded-full bg-sky-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-sky-500/25 transition duration-300 hover:bg-sky-700 hover:-translate-y-0.5">
+                        Book a Free Demo <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                    </a>
+                    <a href="#features"
+                        class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-8 py-3.5 text-sm font-semibold text-slate-700 transition duration-300 hover:border-sky-500 hover:text-sky-600">
+                        See Features
+                    </a>
+                </div>
+
+                <!-- Feature Badges -->
+                <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-xs font-semibold text-slate-600 sm:text-sm">
+                    <span class="flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="h-4 w-4 text-emerald-500"></i> Cloud based
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="h-4 w-4 text-emerald-500"></i> Web &amp; mobile access
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="h-4 w-4 text-emerald-500"></i> Secure data
+                    </span>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: New Clean Dashboard Image Preview -->
+            <div class="relative lg:col-span-7">
+
+                <!-- Ambient Glow behind Image -->
+                
+          
+
+                    <!-- Mock Browser Top Header Bar -->
+                    
+
+                    <!-- Updated HRMS Dashboard Image -->
+                    <div class="relative bg-slate-100 p-2 sm:p-3">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80"
+                            alt="NeesunHR Modern HRMS Dashboard"
+                            class="w-full rounded-lg object-cover shadow-md h-[380px] sm:h-[480px]" />
+
+                        <!-- Floating Live Check-in Card (Bottom Left Overlay) -->
+                        <div
+                            class="hidden sm:flex absolute bottom-6 left-6 items-center gap-3 rounded-xl border border-slate-200/80 bg-white/90 backdrop-blur-md p-3 text-slate-900 shadow-xl">
+                            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-sky-100 text-sky-600">
+                                <i data-lucide="fingerprint" class="h-5 w-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-900">Live Biometric Sync</p>
+                                <p class="text-[11px] text-slate-500">231 Employees Checked-in</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Payroll Card (Top Right Overlay) -->
+                        <div
+                            class="hidden sm:flex absolute top-6 right-6 items-center gap-3 rounded-xl border border-slate-200/80 bg-white/90 backdrop-blur-md p-3 text-slate-900 shadow-xl">
+                            <div
+                                class="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600">
+                                <i data-lucide="wallet" class="h-5 w-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase font-medium text-slate-500">October Payroll</p>
+                                <p class="text-xs font-bold text-emerald-600">Processed Automatically</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+         
+
+        </div>
+    </div>
+</section>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-20 lg:py-24">
+        <div class="max-w-7xl mx-auto px-5">
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-brand font-semibold tracking-widest text-sm">FEATURES</p>
+                <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy">Everything HR needs, in one place</h2>
+                <p class="mt-4">Replace spreadsheets, registers and paperwork with one connected system.</p>
+            </div>
+            <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div
+                    class="group rounded-2xl border border-slate-100 p-8 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand/10 hover:border-brand/30 transition">
+                    <span
+                        class="w-14 h-14 rounded-2xl bg-brand/10 text-brand grid place-items-center group-hover:bg-gradient-to-br group-hover:from-brand group-hover:to-brand-cyan group-hover:text-white transition"><i
+                            data-lucide="users" class="w-7 h-7"></i></span>
+                    <h3 class="mt-6 text-xl font-bold text-navy">Employee Management</h3>
+                    <p class="mt-3 text-sm leading-relaxed">Central database for profiles, documents, job history and
+                        org structure.</p>
+                </div>
+                <div
+                    class="group rounded-2xl border border-slate-100 p-8 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand/10 hover:border-brand/30 transition">
+                    <span
+                        class="w-14 h-14 rounded-2xl bg-brand/10 text-brand grid place-items-center group-hover:bg-gradient-to-br group-hover:from-brand group-hover:to-brand-cyan group-hover:text-white transition"><i
+                            data-lucide="clock" class="w-7 h-7"></i></span>
+                    <h3 class="mt-6 text-xl font-bold text-navy">Attendance &amp; Shifts</h3>
+                    <p class="mt-3 text-sm leading-relaxed">Track daily attendance, shifts, late marks and overtime
+                        accurately.</p>
+                </div>
+                <div
+                    class="group rounded-2xl border border-slate-100 p-8 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand/10 hover:border-brand/30 transition">
+                    <span
+                        class="w-14 h-14 rounded-2xl bg-brand/10 text-brand grid place-items-center group-hover:bg-gradient-to-br group-hover:from-brand group-hover:to-brand-cyan group-hover:text-white transition"><i
+                            data-lucide="calendar-days" class="w-7 h-7"></i></span>
+                    <h3 class="mt-6 text-xl font-bold text-navy">Leave Management</h3>
+                    <p class="mt-3 text-sm leading-relaxed">Online leave requests, approvals, balances and holiday
+                        calendar.</p>
+                </div>
+                <div
+                    class="group rounded-2xl border border-slate-100 p-8 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand/10 hover:border-brand/30 transition">
+                    <span
+                        class="w-14 h-14 rounded-2xl bg-brand/10 text-brand grid place-items-center group-hover:bg-gradient-to-br group-hover:from-brand group-hover:to-brand-cyan group-hover:text-white transition"><i
+                            data-lucide="wallet" class="w-7 h-7"></i></span>
+                    <h3 class="mt-6 text-xl font-bold text-navy">Payroll &amp; Payslips</h3>
+                    <p class="mt-3 text-sm leading-relaxed">Automated salary calculation, deductions and downloadable
+                        payslips.</p>
+                </div>
+                <div
+                    class="group rounded-2xl border border-slate-100 p-8 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand/10 hover:border-brand/30 transition">
+                    <span
+                        class="w-14 h-14 rounded-2xl bg-brand/10 text-brand grid place-items-center group-hover:bg-gradient-to-br group-hover:from-brand group-hover:to-brand-cyan group-hover:text-white transition"><i
+                            data-lucide="user-plus" class="w-7 h-7"></i></span>
+                    <h3 class="mt-6 text-xl font-bold text-navy">Recruitment &amp; Onboarding</h3>
+                    <p class="mt-3 text-sm leading-relaxed">Manage openings, candidates and a smooth onboarding for new
+                        joiners.</p>
+                </div>
+                <div
+                    class="group rounded-2xl border border-slate-100 p-8 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand/10 hover:border-brand/30 transition">
+                    <span
+                        class="w-14 h-14 rounded-2xl bg-brand/10 text-brand grid place-items-center group-hover:bg-gradient-to-br group-hover:from-brand group-hover:to-brand-cyan group-hover:text-white transition"><i
+                            data-lucide="trending-up" class="w-7 h-7"></i></span>
+                    <h3 class="mt-6 text-xl font-bold text-navy">Reports &amp; Analytics</h3>
+                    <p class="mt-3 text-sm leading-relaxed">Ready-made reports and insights for better people decisions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="relative overflow-hidden bg-slate-50 py-20 lg:py-28">
+        <!-- Subtle Ambient Background Accents -->
+        <div class="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-sky-200/40 blur-3xl"></div>
+        <div class="pointer-events-none absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-slate-200/50 blur-3xl">
+        </div>
+
+        <div class="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="mx-auto max-w-7xl text-center">
+                <span
+                    class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-sky-700">
+                    How It Works
+                </span>
+                <h2 class="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+                    Get started in three simple steps
+                </h2>
+                <p class="mt-4 text-base text-slate-600 sm:text-lg">
+                    Streamline your HR workflows effortlessly with our guided onboarding process.
+                </p>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="relative mt-16 grid gap-8 md:grid-cols-3">
+
+                <!-- Step 1 -->
+                <div
+                    class="group relative flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-xl hover:shadow-sky-500/5">
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-50 text-sky-600 border border-sky-100 transition duration-300 group-hover:bg-sky-600 group-hover:text-white">
+                                <i data-lucide="calendar-check" class="h-6 w-6"></i>
+                            </span>
+                            <span
+                                class="text-3xl font-extrabold text-slate-200 transition duration-300 group-hover:text-sky-200">
+                                01
+                            </span>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-slate-900">
+                            Book a demo
+                        </h3>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-600">
+                            See NeesunHR in action and tell us about your company's HR needs.
+                        </p>
+                    </div>
+                    <div
+                        class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-semibold text-sky-600">
+                        <span>Schedule Call</span>
+                        <i data-lucide="arrow-right"
+                            class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div
+                    class="group relative flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-xl hover:shadow-sky-500/5">
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-50 text-sky-600 border border-sky-100 transition duration-300 group-hover:bg-sky-600 group-hover:text-white">
+                                <i data-lucide="settings-2" class="h-6 w-6"></i>
+                            </span>
+                            <span
+                                class="text-3xl font-extrabold text-slate-200 transition duration-300 group-hover:text-sky-200">
+                                02
+                            </span>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-slate-900">
+                            We set it up
+                        </h3>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-600">
+                            We configure policies, shifts, leave rules and import your employee data seamlessly.
+                        </p>
+                    </div>
+                    <div
+                        class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-semibold text-sky-600">
+                        <span>Full Onboarding</span>
+                        <i data-lucide="arrow-right"
+                            class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div
+                    class="group relative flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-xl hover:shadow-sky-500/5">
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-50 text-sky-600 border border-sky-100 transition duration-300 group-hover:bg-sky-600 group-hover:text-white">
+                                <i data-lucide="rocket" class="h-6 w-6"></i>
+                            </span>
+                            <span
+                                class="text-3xl font-extrabold text-slate-200 transition duration-300 group-hover:text-sky-200">
+                                03
+                            </span>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-slate-900">
+                            Go live
+                        </h3>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-600">
+                            Your team starts using the web app and your admin runs HR from one central dashboard.
+                        </p>
+                    </div>
+                    <div
+                        class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-semibold text-sky-600">
+                        <span>Launch & Scale</span>
+                        <i data-lucide="arrow-right"
+                            class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- DASHBOARD PREVIEW - SIDE BY SIDE LAYOUT -->
+    <section class="relative overflow-hidden bg-slate-50 py-20 lg:py-28">
+    
+        <!-- Subtle Background Accents -->
+        <div class="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-sky-200/40 blur-3xl"></div>
+        <div class="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-slate-200/50 blur-3xl">
+        </div>
+    
+        <div class="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+            <div class="grid gap-12 lg:grid-cols-12 lg:items-center">
+    
+                <!-- LEFT COLUMN: Text & Feature Cards -->
+                <div class="lg:col-span-5">
+                    <span
+                        class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-sky-700">
+                        <i data-lucide="layout-dashboard" class="h-3.5 w-3.5"></i> Intuitive Admin Control
+                    </span>
+                    <h2 class="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+                        Experience the Next-Gen HR Dashboard
+                    </h2>
+                    <p class="mt-4 text-base leading-relaxed text-slate-600">
+                        Manage payroll, track real-time attendance, and handle employee requests—all from a single, unified
+                        command center.
+                    </p>
+    
+                    <!-- Vertical Feature Cards -->
+                    <div class="mt-8 space-y-4">
+    
+                        <div
+                            class="group flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm transition duration-300 hover:border-sky-300 hover:shadow-md">
+                            <span
+                                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-50 text-sky-600 border border-sky-100 transition group-hover:bg-sky-600 group-hover:text-white">
+                                <i data-lucide="pie-chart" class="h-5 w-5"></i>
+                            </span>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900">Real-Time Analytics</h3>
+                                <p class="mt-1 text-sm text-slate-600">Monitor attendance trends, department overheads, and
+                                    leave distribution at a glance.</p>
+                            </div>
+                        </div>
+    
+                        <div
+                            class="group flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm transition duration-300 hover:border-sky-300 hover:shadow-md">
+                            <span
+                                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-50 text-sky-600 border border-sky-100 transition group-hover:bg-sky-600 group-hover:text-white">
+                                <i data-lucide="zap" class="h-5 w-5"></i>
+                            </span>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900">One-Click Approvals</h3>
+                                <p class="mt-1 text-sm text-slate-600">Quickly approve leave requests, expense claims, and
+                                    shift swaps right from your feed.</p>
+                            </div>
+                        </div>
+    
+                        <div
+                            class="group flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm transition duration-300 hover:border-sky-300 hover:shadow-md">
+                            <span
+                                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-50 text-sky-600 border border-sky-100 transition group-hover:bg-sky-600 group-hover:text-white">
+                                <i data-lucide="shield-check" class="h-5 w-5"></i>
+                            </span>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900">Role-Based Access</h3>
+                                <p class="mt-1 text-sm text-slate-600">Custom permission sets for HR Admins, Department
+                                    Managers, and Finance teams.</p>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    <!-- RIGHT COLUMN: Dashboard Image Preview -->
+    <div class="relative lg:col-span-7">
+        <div class="relative  p-2 sm:p-3 rounded-xl shadow">
+            <img src="https://i.pinimg.com/originals/f4/8b/ff/f48bffcc46fb8d632325cd3374b6e3a9.png" alt="NeesunHR Dashboard Screen"
+                class="w-full rounded-lg object-cover shadow-inner h-[380px] sm:h-[480px]" />
+        </div>
+    </div>
+           
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    <!-- HRMS FEATURES & STATS -->
+    <section class="relative overflow-hidden bg-white py-20 lg:py-28 border-b border-slate-100">
+        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+            <!-- Header -->
+            <div class="mx-auto max-w-7xl text-center">
+                <span
+                    class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-sky-700">
+                    All-In-One HR Solution
+                </span>
+                <h2 class="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+                    Everything you need to manage your workforce
+                </h2>
+                <p class="mt-4 text-base text-slate-600 sm:text-lg">
+                    Automate core HR tasks, streamline attendance, manage payroll, and empower your employees with a
+                    modern
+                    digital workspace.
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+                <!-- Feature 1 -->
+                <div
+                    class="group rounded-2xl border border-slate-200/80 bg-slate-50/50 p-6 transition duration-300 hover:border-sky-300 hover:bg-white hover:shadow-xl hover:shadow-sky-500/5">
+                    <div
+                        class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition duration-300">
+                        <i data-lucide="clock" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="mt-5 text-lg font-bold text-slate-900">Attendance & Shifts</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                        Track real-time biometric punch-ins, geo-fenced mobile attendance, and flexible shift rosters.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="group rounded-2xl border border-slate-200/80 bg-slate-50/50 p-6 transition duration-300 hover:border-sky-300 hover:bg-white hover:shadow-xl hover:shadow-sky-500/5">
+                    <div
+                        class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition duration-300">
+                        <i data-lucide="calculator" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="mt-5 text-lg font-bold text-slate-900">Automated Payroll</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                        Process accurate monthly payroll, salary slips, tax deductions, and compliance in one click.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="group rounded-2xl border border-slate-200/80 bg-slate-50/50 p-6 transition duration-300 hover:border-sky-300 hover:bg-white hover:shadow-xl hover:shadow-sky-500/5">
+                    <div
+                        class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition duration-300">
+                        <i data-lucide="calendar-off" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="mt-5 text-lg font-bold text-slate-900">Leave Management</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                        Customizable leave policies, multi-level approvals, and instant balance tracking for employees.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="group rounded-2xl border border-slate-200/80 bg-slate-50/50 p-6 transition duration-300 hover:border-sky-300 hover:bg-white hover:shadow-xl hover:shadow-sky-500/5">
+                    <div
+                        class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition duration-300">
+                        <i data-lucide="user-check" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="mt-5 text-lg font-bold text-slate-900">Employee Portal</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                        Self-service access for employees to download payslips, apply for leaves, and update profiles.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Metrics Strip -->
+            <div class="mt-16 rounded-2xl bg-slate-900 p-8 sm:p-10 text-white shadow-xl">
+                <div class="grid grid-cols-2 gap-8 lg:grid-cols-4 lg:divide-x lg:divide-slate-800">
+                    <div class="text-center lg:px-4">
+                        <p class="text-3xl font-extrabold text-sky-400 sm:text-4xl">99.9%</p>
+                        <p class="mt-2 text-xs font-medium text-slate-400 uppercase tracking-wider">Payroll Accuracy</p>
+                    </div>
+                    <div class="text-center lg:px-4">
+                        <p class="text-3xl font-extrabold text-sky-400 sm:text-4xl">10x</p>
+                        <p class="mt-2 text-xs font-medium text-slate-400 uppercase tracking-wider">Faster Onboarding
+                        </p>
+                    </div>
+                    <div class="text-center lg:px-4">
+                        <p class="text-3xl font-extrabold text-sky-400 sm:text-4xl">50,000+</p>
+                        <p class="mt-2 text-xs font-medium text-slate-400 uppercase tracking-wider">Daily Active Users
+                        </p>
+                    </div>
+                    <div class="text-center lg:px-4">
+                        <p class="text-3xl font-extrabold text-sky-400 sm:text-4xl">24/7</p>
+                        <p class="mt-2 text-xs font-medium text-slate-400 uppercase tracking-wider">Dedicated Support
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+   
+
+    <!-- DEMO FORM & CONTACT SECTION -->
+    <section id="demo" class="relative overflow-hidden bg-slate-50 py-20 lg:py-8">
+        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+            <div class="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow">
+
+                <!-- Subtle Background Blur Accents -->
+                <div
+                    class="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-sky-100/60 blur-3xl">
+                </div>
+                <div
+                    class="pointer-events-none absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-slate-100 blur-3xl">
+                </div>
+
+                <div class="relative z-10 grid gap-10 p-8 sm:p-12 lg:grid-cols-12 lg:gap-12 lg:p-16">
+
+                    <!-- Left Info Content -->
+                    <div class="flex flex-col justify-between lg:col-span-6">
+                        <div>
+                            <span
+                                class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-sky-700">
+                                Get Started
+                            </span>
+                            <h2 class="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+                                See NeesunHR in action
+                            </h2>
+                            <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+                                Book a free demo and find out how NeesunHR can save your HR team hours every single
+                                week.
+                            </p>
+
+                            <!-- Contact Quick Links -->
+                            <div class="mt-8 space-y-4">
+                                <a href="mailto:info@neesuntech.com"
+                                    class="group flex items-center gap-4 rounded-xl border border-slate-200/80 bg-slate-50/50 p-3.5 transition duration-300 hover:border-sky-300 hover:bg-sky-50/40">
+                                    <span
+                                        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-600 transition group-hover:bg-sky-600 group-hover:text-white">
+                                        <i data-lucide="mail" class="h-5 w-5"></i>
+                                    </span>
+                                    <div>
+                                        <span class="block text-xs font-medium text-slate-500">Email Us</span>
+                                        <span class="text-sm font-semibold text-slate-900">info@neesuntech.com</span>
+                                    </div>
+                                </a>
+
+                                <a href="tel:+910000000000"
+                                    class="group flex items-center gap-4 rounded-xl border border-slate-200/80 bg-slate-50/50 p-3.5 transition duration-300 hover:border-sky-300 hover:bg-sky-50/40">
+                                    <span
+                                        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-600 transition group-hover:bg-sky-600 group-hover:text-white">
+                                        <i data-lucide="phone" class="h-5 w-5"></i>
+                                    </span>
+                                    <div>
+                                        <span class="block text-xs font-medium text-slate-500">Call Us</span>
+                                        <span class="text-sm font-semibold text-slate-900">+91 00000 00000</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Trust Badge -->
+                        <div class="mt-8 border-t border-slate-100 pt-6">
+                            <div class="flex items-center gap-3">
+                                <div class="flex -space-x-2">
+                                    <span
+                                        class="inline-block h-8 w-8 rounded-full ring-2 ring-white bg-slate-200"></span>
+                                    <span
+                                        class="inline-block h-8 w-8 rounded-full ring-2 ring-white bg-slate-300"></span>
+                                    <span
+                                        class="inline-block h-8 w-8 rounded-full ring-2 ring-white bg-slate-400"></span>
+                                </div>
+                                <p class="text-xs font-medium text-slate-600">Trusted by HR managers across 200+
+                                    companies
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Form Box -->
+                    <div class="lg:col-span-6">
+                        <form class="rounded-2xl border border-slate-200/80 bg-slate-50/60 p-6 sm:p-8 space-y-4"
+                            onsubmit="event.preventDefault(); alert('Thank you! We will contact you to schedule your demo.'); this.reset();">
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700">Full Name *</label>
+                                <input required type="text" placeholder="John Doe"
+                                    class="mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/20" />
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700">Company Name *</label>
+                                <input required type="text" placeholder="Acme Corp"
+                                    class="mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/20" />
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700">Work Email *</label>
+                                <input required type="email" placeholder="john@company.com"
+                                    class="mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/20" />
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700">Phone Number</label>
+                                <input type="tel" placeholder="+91 98765 43210"
+                                    class="mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/20" />
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700">Number of Employees</label>
+                                <select
+                                    class="mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/20">
+                                    <option value="" disabled selected>Select employee count</option>
+                                    <option>1 – 25</option>
+                                    <option>26 – 100</option>
+                                    <option>101 – 500</option>
+                                    <option>500+</option>
+                                </select>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full rounded-xl bg-sky-600 py-3.5 text-sm font-semibold text-white shadow-md transition duration-300 hover:bg-sky-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+                                Book My Free Demo
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADDITIONAL EXTRA SECTION: TESTIMONIALS & TRUST -->
+    <section class="border-t border-slate-100 bg-white py-20 lg:py-24">
+        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+            <div class="mx-auto max-w-3xl text-center">
+                <span
+                    class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-sky-700">
+                    Client Success
+                </span>
+                <h2 class="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                HR Teams & Leaders
+                </h2>
+                <p class="mt-3 text-slate-600">See how companies simplify daily operations with NeesunHR.</p>
+            </div>
+
+            <div class="mt-14 grid gap-8 md:grid-cols-3">
+
+                <!-- Card 1 -->
+                <div
+                    class="flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-slate-50/50 p-8 transition duration-300 hover:border-sky-300 hover:bg-white hover:shadow-xl hover:shadow-sky-500/5">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="mt-4 text-sm leading-relaxed text-slate-700">
+                            "Payroll processing used to take our team 3 full days every month. With NeesunHR, it's
+                            completed
+                            in under 30 minutes with zero calculation errors."
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center gap-3 border-t border-slate-200/60 pt-4">
+                        <div
+                            class="h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center font-bold text-sky-700 text-sm">
+                            RK
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900">Rajesh Kumar</h4>
+                            <p class="text-xs text-slate-500">Head of HR, TechOps India</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-slate-50/50 p-8 transition duration-300 hover:border-sky-300 hover:bg-white hover:shadow-xl hover:shadow-sky-500/5">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="mt-4 text-sm leading-relaxed text-slate-700">
+                            "The mobile attendance and leave management feature solved all our remote employee tracking
+                            issues instantly. Super clean and intuitive user interface."
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center gap-3 border-t border-slate-200/60 pt-4">
+                        <div
+                            class="h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center font-bold text-sky-700 text-sm">
+                            PS
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900">Priya Sharma</h4>
+                            <p class="text-xs text-slate-500">Operations Director, Apex Solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-slate-50/50 p-8 transition duration-300 hover:border-sky-300 hover:bg-white hover:shadow-xl hover:shadow-sky-500/5">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="mt-4 text-sm leading-relaxed text-slate-700">
+                            "Onboarding new employees used to involve endless paperwork. Now candidates upload documents
+                            directly to their portal before Day 1."
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center gap-3 border-t border-slate-200/60 pt-4">
+                        <div
+                            class="h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center font-bold text-sky-700 text-sm">
+                            AM
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900">Anish Mehta</h4>
+                            <p class="text-xs text-slate-500">Founder, CloudVentures</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (light) -->
+    <footer class="bg-slate-50 border-t border-slate-200 text-slate-600">
+        <div class="max-w-7xl mx-auto px-5 pt-16 pb-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div>
+                <a href="index.html" class="flex items-center gap-2"><svg class="w-9 h-10">
+                        <use href="#logoN" />
+                    </svg><span class="text-2xl font-extrabold tracking-tight text-navy">Neesun<span
+                            class="text-brand-light">tech</span></span></a>
+                <p class="mt-4 text-sm leading-relaxed max-w-xs">NeesunHR is a product of Neesuntech. Technology for a
+                    brighter tomorrow.</p>
+            </div>
+            <div class="text-sm">
+                <h4 class="font-bold text-navy mb-4">NeesunHR</h4>
+                <ul class="space-y-2.5">
+                    <li><a href="#features" class="hover:text-brand">Features</a></li>
+                    <li><a href="#how" class="hover:text-brand">How It Works</a></li>
+                    <li><a href="#modules" class="hover:text-brand">Portals</a></li>
+                    <li><a href="#faq" class="hover:text-brand">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="text-sm">
+                <h4 class="font-bold text-navy mb-4">Login &amp; Links</h4>
+                <ul class="space-y-2.5">
+                    <li><a href="https://app.neesuntech.com" class="hover:text-brand">Web App Login</a></li>
+                    <li><a href="https://admin.neesuntech.com" class="hover:text-brand">Admin Login</a></li>
+                    <li><a href="index.html" class="hover:text-brand">Main Website</a></li>
+                </ul>
+            </div>
+            <div class="text-sm">
+                <h4 class="font-bold text-navy mb-4">Contact</h4>
+                <ul class="space-y-3">
+                    <li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 mt-0.5 text-brand shrink-0"></i>
+                        info@neesuntech.com</li>
+                    <li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 mt-0.5 text-brand shrink-0"></i> +91
+                        00000 00000</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-slate-200 py-5 text-center text-xs text-slate-500">© <span id="yr"></span>
+            Neesuntech. All rights reserved.</div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        document.getElementById('yr').textContent = new Date().getFullYear();
+        const menu = document.getElementById('mobileMenu');
+        document.getElementById('menuBtn').addEventListener('click', () => menu.classList.toggle('hidden'));
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.add('hidden')));
+        const lm = document.getElementById('loginMenu');
+        document.getElementById('loginBtn').addEventListener('click', e => { e.stopPropagation(); lm.classList.toggle('hidden'); });
+        document.addEventListener('click', e => { if (!document.getElementById('loginWrap').contains(e.target)) lm.classList.add('hidden'); });
+    </script>
+</body>
+
+</html>
